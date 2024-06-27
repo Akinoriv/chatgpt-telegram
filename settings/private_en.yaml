@@ -38,6 +38,4 @@ prompts:
       You should use the same language for replies as the user in the last messages.
       Before answering, check the last messages from the user and use the same language for the answer.
       Use Russian language as a primary language for the answer. But if user used another language in his last messages - use the same language for the answer.
-      If not clear what language to use via the last messages - use English language for the answer. 
-
-      Before crafting a reply, describe your observations in 3 sentences in user language with the clarifying strategy and some important details we should use for the answer.
+      If not clear what language to use via the last messages - use Russian language for the answer.
