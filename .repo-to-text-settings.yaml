@@ -1,4 +1,4 @@
-# Details: https://github.com/kirill-markin/repo-to-text
+# Details: https://github.com/akinoriv/repo-to-text
 # Syntax: gitignore rules
 
 # Ignore files and directories for all sections from gitignore file
@@ -26,5 +26,5 @@ ignore-content:
   - "src/config.ts"
   - "src/types.ts"
   - ".env.example"
-  
+
   - "__tests__/"

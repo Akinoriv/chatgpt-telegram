@@ -11,8 +11,8 @@ Feel free to interact with the bot and test its capabilities!
 
 ## Cloud Deployment with One-Click Buttons
 
-| [![Deploy to Heroku](https://www.herokucdn.com/deploy/button.svg)](https://dashboard.heroku.com/new?template=https%3A%2F%2Fgithub.com%2Fkirill-markin%2Fchatgpt-telegram-bot-telegraf) | [![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy) | [![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/template/6T8UU3?referralCode=ln-goT) |
-|---|---|---|
+| [![Deploy to Heroku](https://www.herokucdn.com/deploy/button.svg)](https://dashboard.heroku.com/new?template=https%3A%2F%2Fgithub.com%2Fakinoriv%2Fchatgpt-telegram-bot-telegraf) | [![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy) | [![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/template/6T8UU3?referralCode=ln-goT) |
+| --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
 
 ## Features
 
@@ -28,34 +28,34 @@ Feel free to interact with the bot and test its capabilities!
 
 1. Clone the repository:
 
-    ```bash
-    git clone https://github.com/kirill-markin/chatgpt-telegram-bot-telegraf.git
-    cd chatgpt-telegram-bot-telegraf
-    ```
+   ```bash
+   git clone https://github.com/akinoriv/chatgpt-telegram-bot-telegraf.git
+   cd chatgpt-telegram-bot-telegraf
+   ```
 
 2. Copy the `.env.example` file to `.env` and fill in the required values:
 
-    ```bash
-    cp .env.example .env
-    ```
+   ```bash
+   cp .env.example .env
+   ```
 
 3. Open the `.env` file and configure the following variables:
 
-    ```env
-    TELEGRAM_BOT_TOKEN=replace_with_your_telegram_bot_token
-    OPENAI_API_KEY=replace_with_your_openai_api_key
-    DATABASE_URL=replace_with_your_database_url
+   ```env
+   TELEGRAM_BOT_TOKEN=replace_with_your_telegram_bot_token
+   OPENAI_API_KEY=replace_with_your_openai_api_key
+   DATABASE_URL=replace_with_your_database_url
 
-    # You can change the settings path if needed
-    SETTINGS_PATH=./settings/private_en.yaml
+   # You can change the settings path if needed
+   SETTINGS_PATH=./settings/private_en.yaml
 
-    # Optional: Set the maximum tokens for trial users, default is 0 (no trial)
-    MAX_TRIAL_TOKENS=100000
+   # Optional: Set the maximum tokens for trial users, default is 0 (no trial)
+   MAX_TRIAL_TOKENS=100000
 
-    # Optional: Only if you want to use Pinecone for Long-Term Memory
-    PINECONE_API_KEY=replace_with_your_pinecone_api_key
-    PINECONE_INDEX_NAME=replace_with_your_pinecone_index_name
-    ```
+   # Optional: Only if you want to use Pinecone for Long-Term Memory
+   PINECONE_API_KEY=replace_with_your_pinecone_api_key
+   PINECONE_INDEX_NAME=replace_with_your_pinecone_index_name
+   ```
 
 4. Adjust the settings in `settings/private_en.yaml` as needed.
 
@@ -64,24 +64,24 @@ Feel free to interact with the bot and test its capabilities!
 1. Ensure Docker Compose is installed on your machine.
 2. Start the services:
 
-    ```bash
-    docker-compose up -d
-    ```
+   ```bash
+   docker-compose up -d
+   ```
 
 3. To stop the services, run:
 
-    ```bash
-    docker-compose down
-    ```
+   ```bash
+   docker-compose down
+   ```
 
 ## Running with Docker
 
 1. Build and run the Docker container:
 
-    ```bash
-    docker build -t chatgpt-telegram-bot-telegraf .
-    docker run --rm -it chatgpt-telegram-bot-telegraf
-    ```
+   ```bash
+   docker build -t chatgpt-telegram-bot-telegraf .
+   docker run --rm -it chatgpt-telegram-bot-telegraf
+   ```
 
 ## Installing and Running Locally
 
@@ -99,38 +99,38 @@ Ensure you have met the following requirements:
 
 1. Clone the repository:
 
-    ```bash
-    git clone https://github.com/kirill-markin/chatgpt-telegram-bot-telegraf.git
-    cd chatgpt-telegram-bot-telegraf
-    ```
+   ```bash
+   git clone https://github.com/akinoriv/chatgpt-telegram-bot-telegraf.git
+   cd chatgpt-telegram-bot-telegraf
+   ```
 
 2. Copy the `.env.example` file to `.env` and fill in the required values:
 
-    ```bash
-    cp .env.example .env
-    ```
+   ```bash
+   cp .env.example .env
+   ```
 
 3. Open the `.env` file and configure the following variables
 
 4. Install the dependencies:
 
-    ```bash
-    npm install
-    ```
+   ```bash
+   npm install
+   ```
 
 5. Start the bot:
 
-    ```bash
-    npm start
-    ```
+   ```bash
+   npm start
+   ```
 
 ## Running Tests
 
 1. To run the tests, use the following command:
 
-    ```bash
-    npm test
-    ```
+   ```bash
+   npm test
+   ```
 
 ## User Management
 

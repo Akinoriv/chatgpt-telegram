@@ -2,7 +2,7 @@
   "name": "http-nodejs",
   "version": "1.0.0",
   "main": "index.js",
-  "author": "Kirill Markin",
+  "author": "Vironika",
   "license": "MIT",
   "scripts": {
     "start": "ts-node --transpile-only src/bot.ts",

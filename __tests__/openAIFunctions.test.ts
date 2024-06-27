@@ -1,49 +1,53 @@
-import { truncateHistoryToTokenLimit, countTotalTokens, APPROX_IMAGE_TOKENS } from '../src/openAIFunctions';
-import { MyContext, MyMessage } from '../src/types';
+import {
+  truncateHistoryToTokenLimit,
+  countTotalTokens,
+  APPROX_IMAGE_TOKENS,
+} from "../src/openAIFunctions";
+import { MyContext, MyMessage } from "../src/types";
 
 // Mock data
 const mockMessages: MyMessage[] = [
   {
-    role: 'user',
-    content: 'This is a test message from the user.',
+    role: "user",
+    content: "This is a test message from the user.",
     chat_id: 1,
     user_id: 1,
   },
   {
-    role: 'assistant',
+    role: "assistant",
     content: [
       {
-        type: 'text',
-        text: 'This is a response from the assistant.',
+        type: "text",
+        text: "This is a response from the assistant.",
       },
     ],
     chat_id: 1,
     user_id: null,
   },
   {
-    role: 'user',
+    role: "user",
     content: [
       {
-        type: 'text',
-        text: 'Another message from the user that is really long and needs to be truncated. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        type: "text",
+        text: "Another message from the user that is really long and needs to be truncated. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
       },
     ],
     chat_id: 1,
     user_id: 1,
   },
   {
-    role: 'user',
+    role: "user",
     content: [
       {
-        type: 'image_url',
+        type: "image_url",
         image_url: {
-          url: "test_data_url"
-        }
+          url: "test_data_url",
+        },
       },
     ],
     chat_id: 1,
     user_id: 1,
-  }
+  },
 ];
 
 // Mock context based on the provided data
@@ -56,42 +60,50 @@ const mockCtx: Partial<MyContext> = {
   from: {
     id: 112249713,
     is_bot: false,
-    first_name: "Kirill",
-    last_name: "Markin",
+    first_name: "Vironika",
+    last_name: "",
     username: "kirmark",
     language_code: "en",
     is_premium: true,
-  }
+  },
 };
 
-describe('truncateHistoryToTokenLimit', () => {
-  it('should reduce history to fit within token limit', () => {
+describe("truncateHistoryToTokenLimit", () => {
+  it("should reduce history to fit within token limit", () => {
     const maxTokens = 0;
-    const reducedMessages = truncateHistoryToTokenLimit(mockCtx as MyContext, mockMessages, maxTokens);
+    const reducedMessages = truncateHistoryToTokenLimit(
+      mockCtx as MyContext,
+      mockMessages,
+      maxTokens
+    );
 
     // Validate the length of the reduced messages
     const totalTokens = countTotalTokens(reducedMessages);
     expect(totalTokens).toBeLessThanOrEqual(maxTokens);
   });
 
-  it('should return an empty array if maxTokens is 0', () => {
+  it("should return an empty array if maxTokens is 0", () => {
     const maxTokens = 0;
-    const reducedMessages = truncateHistoryToTokenLimit(mockCtx as MyContext, mockMessages, maxTokens);
+    const reducedMessages = truncateHistoryToTokenLimit(
+      mockCtx as MyContext,
+      mockMessages,
+      maxTokens
+    );
 
     expect(reducedMessages).toEqual([]);
   });
 });
 
-describe('countTotalTokens', () => {
-  it('should correctly calculate the total number of tokens', () => {
+describe("countTotalTokens", () => {
+  it("should correctly calculate the total number of tokens", () => {
     const totalTokens = countTotalTokens(mockMessages);
-    
+
     // Assuming some hypothetical token counts for the messages
     const expectedTokens = 54 + APPROX_IMAGE_TOKENS; // Replace this with the actual expected token count
     expect(totalTokens).toEqual(expectedTokens);
   });
 
-  it('should return 0 for an empty array', () => {
+  it("should return 0 for an empty array", () => {
     const totalTokens = countTotalTokens([]);
     expect(totalTokens).toEqual(0);
   });

@@ -1,7 +1,7 @@
 {
   "name": "ChatGPT Telegram Bot",
   "description": "An advanced Telegram bot using OpenAI's ChatGPT.",
-  "repository": "https://github.com/kirill-markin/chatgpt-telegram-bot-telegraf",
+  "repository": "https://github.com/akinoriv/chatgpt-telegram-bot-telegraf",
   "env": {
     "TELEGRAM_BOT_TOKEN": {
       "description": "Your Telegram bot token obtained via https://t.me/BotFather",
