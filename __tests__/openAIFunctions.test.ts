@@ -58,11 +58,11 @@ const mockCtx: Partial<MyContext> = {
     type: "group",
   },
   from: {
-    id: 112249713,
+    id: 883436049,
     is_bot: false,
     first_name: "Vironika",
     last_name: "",
-    username: "kirmark",
+    username: "akinoriv",
     language_code: "en",
     is_premium: true,
   },
